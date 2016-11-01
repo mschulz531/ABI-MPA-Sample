@@ -8,7 +8,7 @@ namespace abi_mpa_app.UITest
         readonly Query signInButton;
 
         public SignInPage()
-            : base(x => x.Marked("Sign-in"), x => x.Marked("sign-in"))
+            : base(x => x.Marked("Sign-in"), x => x.Marked("Sign-in"))
         {
             if (OnAndroid)
             {

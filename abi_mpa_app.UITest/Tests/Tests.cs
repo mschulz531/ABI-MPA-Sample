@@ -17,7 +17,8 @@ namespace abi_mpa_app.UITest
         [Test]
         public void AppLaunches()
         {
-            new HomePage();
+            new HomePage()
+                .DismissSignInAlert();
         }
     }
 }

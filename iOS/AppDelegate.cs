@@ -67,8 +67,12 @@ namespace abi_mpa_app.iOS
 
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			// Initialize Azure Mobile Apps
-			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+#if DEBUG
+            Xamarin.Calabash.Start();
+#endif
+
+            // Initialize Azure Mobile Apps
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 
 			RegisterAuthorizedUserForNotification();
 

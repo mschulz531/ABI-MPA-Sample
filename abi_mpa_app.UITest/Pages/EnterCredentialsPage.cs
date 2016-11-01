@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Xamarin.UITest;
 using WebQuery = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppWebQuery>;
 
@@ -31,6 +32,9 @@ namespace abi_mpa_app.UITest
 
             app.EnterText(passwordField, password);
             app.DismissKeyboard();
+
+            // Wait for keyboard animation
+            Thread.Sleep(500);
             app.Screenshot("Credentials entered");
 
             return this;
