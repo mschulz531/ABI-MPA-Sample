@@ -26,11 +26,13 @@ namespace abi_mpa_app.UITest
 
         public EnterCredentialsPage EnterCredentials(string username, string password)
         {
-            app.EnterText(usernameField, username);
+            app.Tap(usernameField);
+            app.EnterText(username);
             app.PressEnter();
-            app.WaitForElement(passwordField);
 
-            app.EnterText(passwordField, password);
+            app.WaitForElement(passwordField);
+            app.Tap(passwordField);
+            app.EnterText(password);
             app.DismissKeyboard();
 
             // Wait for keyboard animation

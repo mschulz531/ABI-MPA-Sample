@@ -20,5 +20,17 @@ namespace abi_mpa_app.UITest
             new HomePage()
                 .DismissSignInAlert();
         }
+
+        [Test]
+        [TestCase("Xamarin UITest Message")]
+        public void SendMessage(string text)
+        {
+            new HomePage()
+                .DismissSignInAlert();
+
+            new HomePage()
+                .SendMessage(text)
+                .LocateMessage(text);
+        }
     }
 }
