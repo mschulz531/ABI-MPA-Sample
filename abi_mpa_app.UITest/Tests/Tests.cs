@@ -26,9 +26,7 @@ namespace abi_mpa_app.UITest
         public void SendMessage(string text)
         {
             new HomePage()
-                .DismissSignInAlert();
-
-            new HomePage()
+                .DismissSignInAlert()
                 .SendMessage(text)
                 .LocateMessage(text);
         }

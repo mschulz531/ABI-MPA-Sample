@@ -1,4 +1,5 @@
 ﻿using System;
+using NUnit.Framework;
 using Xamarin.UITest;
 
 using Query = System.Func<Xamarin.UITest.Queries.AppQuery, Xamarin.UITest.Queries.AppQuery>;
@@ -12,6 +13,7 @@ namespace abi_mpa_app.UITest
         readonly Query messageTextField;
         readonly Query sendMessageButton;
         readonly Query scrollView;
+        readonly Query messageList;
 
         public HomePage()
             : base(x => x.Class("ConditionalFocusLayout"), x => x.Class("Xamarin_Forms_Platform_iOS_ContextActionsCell"))
@@ -23,6 +25,7 @@ namespace abi_mpa_app.UITest
                 signInResultAlert = x => x.Marked("Sign-in result");
                 messageTextField = x => x.Class("EntryEditText");
                 scrollView = x => x.Class("ListView");
+                messageList = x => x.Class("ListView");
             }
 
             if (OniOS)
@@ -31,6 +34,7 @@ namespace abi_mpa_app.UITest
                 alertOKButton = x => x.Marked("OK");
                 messageTextField = x => x.Class("UITextField");
                 scrollView = x => x.Class("UITableView");
+                messageList = x => x.Class("UITableView");
             }
         }
 
@@ -54,6 +58,10 @@ namespace abi_mpa_app.UITest
 
         public HomePage SendMessage(string text)
         {
+            var initialLength = OnAndroid ?
+                Convert.ToInt64(app.Query(x => messageList(x).Invoke("getAdapter").Invoke("getCount"))[0]) :
+                Convert.ToInt64(app.Query(x => messageList(x).Invoke("numberOfRowsInSection:"))[0]);
+            
             app.Tap(messageTextField);
             app.EnterText(text);
             app.Screenshot($"Entered message text: {text}");
@@ -61,6 +69,14 @@ namespace abi_mpa_app.UITest
 
             app.Tap(sendMessageButton);
             app.Screenshot("Tapped: 'Send'");
+
+            app.ScrollUp(strategy: ScrollStrategy.Gesture);
+
+            var finalLength = OnAndroid ?
+                Convert.ToInt64(app.Query(x => messageList(x).Invoke("getAdapter").Invoke("getCount"))[0]) :
+                Convert.ToInt64(app.Query(x => messageList(x).Invoke("numberOfRowsInSection:"))[0]);
+
+            app.WaitFor(() => initialLength < finalLength, $"Lenght of list wasn't greater after sending message ({initialLength} !< {finalLength})");
 
             return this;
         }
