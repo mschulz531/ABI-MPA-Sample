@@ -16,24 +16,31 @@ namespace abi_mpa_app.UITest
         protected bool OnAndroid { get; set; }
         protected bool OniOS { get; set; }
 
-        public AbstractSetup(Platform platform)
+        protected AbstractSetup(Platform platform)
         {
+            //platform is passed in from the TestFixture values
             this.platform = platform;
         }
 
         [SetUp]
         public virtual void BeforeEachTest()
         {
+            //Start are app instance
             app = AppInitializer.StartApp(platform);
 
+            //Save booleans based on platform
             OnAndroid = app.GetType() == typeof(AndroidApp);
             OniOS = app.GetType() == typeof(iOSApp);
 
             LogIn();
         }
 
+        /// <summary>
+        /// Logs user into application
+        /// </summary>
         protected void LogIn()
         {
+            //Page objects are used for code re-use and sharing between platforms
             new SignInPage()
                 .SignIn();
 

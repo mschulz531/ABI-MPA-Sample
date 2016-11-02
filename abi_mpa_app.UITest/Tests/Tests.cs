@@ -9,6 +9,9 @@ namespace abi_mpa_app.UITest
 {
     public class Tests : AbstractSetup
     {
+        //Test methods only call into page classes.
+        //They do not directly interact with the app
+
         public Tests(Platform platform)
             : base(platform)
         {

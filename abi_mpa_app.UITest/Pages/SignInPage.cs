@@ -5,11 +5,14 @@ namespace abi_mpa_app.UITest
 {
     public class SignInPage : BasePage
     {
+        //Set query values as class fields
         readonly Query signInButton;
 
+        //Pass the Page Trait to the BasePage constructor
         public SignInPage()
             : base(x => x.Marked("Sign-in"), x => x.Marked("Sign-in"))
         {
+            //If queries are different on platforms, use booleans set in BasePage to conditionally assign them
             if (OnAndroid)
             {
                 signInButton = x => x.Marked("Sign-in");
@@ -21,6 +24,9 @@ namespace abi_mpa_app.UITest
             }
         }
 
+        /// <summary>
+        /// Taps Sign In Button
+        /// </summary>
         public void SignIn()
         {
             app.Screenshot("Tapping Sign In Button");
