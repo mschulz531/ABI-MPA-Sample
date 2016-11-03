@@ -26,12 +26,18 @@ namespace abi_mpa_app.UITest
 
         [Test]
         [TestCase("Xamarin UITest Message")]
-        public void SendMessage(string text)
+        public void SendAndCompleteMessage(string text)
         {
+            // Adding a unique suffix so devices can work together in the cloud
+            var suffix = OnAndroid ? "A" : "I";
+            suffix += Environment.GetEnvironmentVariable("XTC_DEVICE_INDEX") ?? "L";
+            text += " " + suffix;
+
             new HomePage()
                 .DismissSignInAlert()
                 .SendMessage(text)
-                .LocateMessage(text);
+                .LocateMessage(text)
+                .CompleteMessage(text);
         }
     }
 }

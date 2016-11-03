@@ -34,6 +34,9 @@ Global
 		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
+		TestCloud|Any CPU = TestCloud|Any CPU
+		TestCloud|iPhone = TestCloud|iPhone
+		TestCloud|iPhoneSimulator = TestCloud|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -61,6 +64,12 @@ Global
 		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.Release|x64.Build.0 = Debug|Any CPU
 		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.Release|x86.ActiveCfg = Debug|Any CPU
 		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.Release|x86.Build.0 = Debug|Any CPU
+		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.TestCloud|Any CPU.ActiveCfg = TestCloud|Any CPU
+		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.TestCloud|Any CPU.Build.0 = TestCloud|Any CPU
+		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.TestCloud|iPhone.ActiveCfg = TestCloud|iPhone
+		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.TestCloud|iPhone.Build.0 = TestCloud|iPhone
+		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.TestCloud|iPhone.Deploy.0 = TestCloud|iPhone
+		{3AFA591D-C115-4AC9-9519-F788373ECDE9}.TestCloud|iPhoneSimulator.ActiveCfg = TestCloud|iPhoneSimulator
 		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.Debug|Any CPU.ActiveCfg = Debug|iPhone
 		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.Debug|ARM.ActiveCfg = Debug|iPhone
 		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.Debug|iPhone.ActiveCfg = Debug|iPhone
@@ -82,6 +91,11 @@ Global
 		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.Release|Mixed Platforms.Build.0 = DebugIOS|iPhone
 		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.Release|x64.ActiveCfg = DebugIOS|iPhone
 		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.Release|x86.ActiveCfg = DebugIOS|iPhone
+		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.TestCloud|Any CPU.ActiveCfg = TestCloud|Any CPU
+		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.TestCloud|iPhone.ActiveCfg = TestCloud|iPhone
+		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.TestCloud|iPhone.Build.0 = TestCloud|iPhone
+		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.TestCloud|iPhoneSimulator.ActiveCfg = TestCloud|iPhoneSimulator
+		{5FA0219F-B063-4D07-800B-CC38BDB5B916}.TestCloud|iPhoneSimulator.Build.0 = TestCloud|iPhoneSimulator
 		{34B9099E-4B00-4707-BFDE-0B95997F8893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{34B9099E-4B00-4707-BFDE-0B95997F8893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34B9099E-4B00-4707-BFDE-0B95997F8893}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -113,6 +127,12 @@ Global
 		{34B9099E-4B00-4707-BFDE-0B95997F8893}.Release|x86.ActiveCfg = Debug|Any CPU
 		{34B9099E-4B00-4707-BFDE-0B95997F8893}.Release|x86.Build.0 = Debug|Any CPU
 		{34B9099E-4B00-4707-BFDE-0B95997F8893}.Release|x86.Deploy.0 = Debug|Any CPU
+		{34B9099E-4B00-4707-BFDE-0B95997F8893}.TestCloud|Any CPU.ActiveCfg = TestCloud|Any CPU
+		{34B9099E-4B00-4707-BFDE-0B95997F8893}.TestCloud|Any CPU.Build.0 = TestCloud|Any CPU
+		{34B9099E-4B00-4707-BFDE-0B95997F8893}.TestCloud|Any CPU.Deploy.0 = TestCloud|Any CPU
+		{34B9099E-4B00-4707-BFDE-0B95997F8893}.TestCloud|iPhone.ActiveCfg = TestCloud|iPhone
+		{34B9099E-4B00-4707-BFDE-0B95997F8893}.TestCloud|iPhoneSimulator.ActiveCfg = TestCloud|iPhoneSimulator
+		{34B9099E-4B00-4707-BFDE-0B95997F8893}.TestCloud|iPhoneSimulator.Build.0 = TestCloud|iPhoneSimulator
 		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -141,6 +161,12 @@ Global
 		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.Release|x64.Build.0 = Release|Any CPU
 		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.Release|x86.ActiveCfg = Release|Any CPU
 		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.Release|x86.Build.0 = Release|Any CPU
+		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.TestCloud|Any CPU.ActiveCfg = TestCloud|Any CPU
+		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.TestCloud|Any CPU.Build.0 = TestCloud|Any CPU
+		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.TestCloud|iPhone.ActiveCfg = TestCloud|iPhone
+		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.TestCloud|iPhone.Build.0 = TestCloud|iPhone
+		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.TestCloud|iPhoneSimulator.ActiveCfg = TestCloud|iPhoneSimulator
+		{A23522C7-D07C-40B9-BB86-C7D435BCD44A}.TestCloud|iPhoneSimulator.Build.0 = TestCloud|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
