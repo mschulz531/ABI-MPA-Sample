@@ -67,8 +67,12 @@ namespace abi_mpa_app.iOS
 
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			// Initialize Azure Mobile Apps
-			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+#if ENABLE_TEST_CLOUD
+            Xamarin.Calabash.Start();
+#endif
+
+            // Initialize Azure Mobile Apps
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 
 			RegisterAuthorizedUserForNotification();
 
@@ -82,6 +86,7 @@ namespace abi_mpa_app.iOS
 			return base.FinishedLaunching(app, options);
 		}
 
+        #if !ENABLE_TEST_CLOUD
 		public override void RegisteredForRemoteNotifications(UIApplication application,
 	NSData deviceToken)
 		{
@@ -97,6 +102,7 @@ namespace abi_mpa_app.iOS
 			Push push = TodoItemManager.DefaultManager.CurrentClient.GetPush();
 			push.RegisterAsync(deviceToken, templates);
 		}
+        #endif
 
 		public override void DidReceiveRemoteNotification(UIApplication application,
 	NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)
